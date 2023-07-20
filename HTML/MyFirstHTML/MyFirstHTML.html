@@ -1,0 +1,217 @@
+<!DOCTYPE html> <!--以此开头声明是HTML文档-->
+
+<html>
+
+<head> <!--以下是头部元素-->
+    <meta charset="utf-8"> <!--字符编码修正为UTF-8-->
+
+    <!--在头部使用CSS将应用在整个文档，body{background-color}是主体背景的颜色，p{}是段落字体的颜色-->
+    <style type="text/css">
+        body {
+            background-color: rgb(64, 131, 173);
+        }
+
+        p {
+            color: white
+        }
+    </style>
+
+    <title>我的第一个HTML页面</title> <!--整个文档的标题-->
+    <link rel="shortcut icon" href="img/favicon.ico" /><!--使用link添加ico格式的网页图标-->
+</head>
+
+<body> <!--以下才是页面可见内容-->
+    <div id="header" style="background-color:#ff001e;"><!--使用div标签和css样式设定了header的设计-->
+        <hr> <!--分割线-->
+        <h1>HTML示例-一级标题</h1>
+        <hr>
+    </div>
+
+    <h2>第一章-二级标题</h2>
+    <p>学习笔记可以从<a
+            href="https://www.icloud.com.cn/pages/02eLOQ6EeO7bgrT0lBjsJF_zA#HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"
+            target="_blank" rel="noopener noreferrer">这里</a>找到。</p>
+    <p>这是第二段，由于是块级元素，块级之间自动用空行分开。而使用&lt;br&gt;<br>标签，可以在段落内进行换行。</p><!--<br>标签实现段落内换行-->
+    <p><a id="C1P3">这是第三段。</a>以下使用了有序列表的标签显示的内容：
+    <ol>
+        <li><b>粗体字b</b>，<i>斜体字i</i>。</li>
+        <li><strong>加重字体strong</strong>，<em>着重字体em</em>，<small>小号字体small</small>，</li>
+        <li>下标字<sub>sub</sub>，上标字<sup>上标字sup</sup>，</li>
+        <li><ins>插入字ins</ins>，<del>删除字del</del>。</li>
+    </ol>
+    </p>
+
+    <h2>第二章</h2>
+    <p>链接除了可以URL外，还可以创建书签。另见<a href="#Chapter8" style="text-decoration: none;">第八章</a></p><!--这里还使用了style去掉了链接的下划线-->
+
+    <h2 style="background-color: rgb(236, 153, 45);text-align: center;">第三章-不同的样式（带有颜色背景且居中的标题）</h2>
+    <p
+        style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color: rgb(212, 193, 24);font-size: 20px;">
+        这一段使用style属性设置了段落样式是字体Impact，黄色，20px大小。</p>
+
+    <h2>四-插入图像</h2>
+    <p>一种写法-固定大小：<img decoding="async" src="img/AerialKluaneNP.jpg" alt="穿过山谷的河流" width="240" height="135"></p>
+    <p>另一种写法-随浏览器窗口大小：<img style="width: 100vw;" src="img/AerialKluaneNP.jpg" alt="穿过山谷的河流"></p>
+
+
+    <h2>五-表格</h2>
+    <table style="border: 1">
+        <caption>Score of Everyone</caption>
+        <thead style="background-color: aquamarine;">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Points</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td colspan="2">Jill</td><!--合并两个列向的单元格-->
+                <td>50</td>
+            </tr>
+            <tr text-align="center"><!--居中对齐-->
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+        </tbody>
+        <colgroup style="background-color: blanchedalmond;"><!--对整个表格的设置-->
+            <col>
+            <col>
+            <col style="background-color: blue;"><!--对第三列的设置-->
+        </colgroup>
+    </table>
+
+    <h2>六-列表</h2>
+    <p>上面<a href="#C1P3">第一章第三段</a>已经展示了有序列表。以下是无序列表的展示：</p>
+    <p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+    </p>
+    <p>以下是自定义列表的展示：
+    <dl>
+        <dt>Coffee</dt>
+        <dd>* black hot drink</dd>
+        <dt>Mild</dt>
+        <dd>- white cold drink</dd>
+    </dl>
+    </p>
+    <p>
+        以下是以小写字母为代表的不同类型的有序列表的展示（使用了type属性来设定）：
+    <ol type="a">
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Lemons</li>
+        <li>Oranges</li>
+    </ol>
+    </p>
+    <p>列表与列表之间也可以互相嵌套形成多层的结构。</p>
+
+    <div style="color: rgb(31, 158, 80);background-color: darkgoldenrod;">
+        <h2>七-div标签</h2>
+        <p>&lt;div&gt;标签可以作为容器把大的结构块装在一起，结合CSS样式，统一设计风格。<br>
+            具体的应用在标题中已运用。<br>
+            本章也应用了&lt;div&gt;，并重新设置了章节标题的颜色和背景颜色。</p>
+    </div>
+
+    <h2><a id="Chapter8">八-超链接书签</a></h2> <!--先设id再建立链接可创建书签-->
+    <p>要跳转的目标位置添加id="name"属性的链接a标签。而开始跳转的位置使用href="#name"属性的链接a标签创建链接。</p>
+
+    <h2><a href="#Chapter9">九-跳转到十二</a></h2>
+
+    <h2>十-表单和输入</h2>
+    <fieldset>
+        <legend>表单的集体展示（带表单外框）：</legend>
+        <p>
+            两个单行输入框：
+        <form>
+            First name: <input type="text" name="firstname"><br>
+            Last name: <input type="text" name="lastname">
+        </form>
+        </p>
+        <p>
+            一个内含提示信息的单行输入框，一个密码字段输入框和一个文本框：
+        <form>
+            <label>Username</label>
+            <input type="text" name="firstname" placeholder="请在此处输入名字。">
+            Password: <input type="password" name="password"><br>
+            <textarea rows="5" cols="100">请在此处输入其他意见。</textarea>
+        </form>
+        </p>
+        <p>
+            单选按钮：
+        <form action="">
+            <input type="radio" name="sex" value="male">男<br>
+            <input type="radio" name="sex" value="female">女
+        </form>
+        </p>
+        <p>
+            复选框：
+        <form>
+            <input type="checkbox" name="vehicle" value="Bike">我喜欢自行车<br>
+            <input type="checkbox" name="vehicle" value="Car">我喜欢小汽车
+        </form>
+        </p>
+        <p>
+            下拉选项：
+        <form action="">
+            <select name="cars">
+                <option value="default">-</option>
+                <option value="volvo">沃尔沃</option>
+                <option value="saab">萨博</option>
+                <option value="fiat">菲亚特</option>
+                <option value="audi">奥迪</option>
+            </select>
+        </form>
+        </p>
+        <p>
+            按钮：
+            <button>点击刷新！</button>
+        </p>
+        <p>提交按钮：
+        <form name="input" action="https://cn.bing.com/search" method="get">
+            留下电子邮箱以作回访：<input type="text" name="q">
+            <input type="submit" value="提交">
+        </form>
+        </p>
+    </fieldset>
+
+    <h2>十一-框架</h2>
+    <p>
+        使用&lt;iframe&gt;标签来使另一个页面在窗口中显示。<br>
+        <iframe src="https://space.bilibili.com/4391288" width="360px" height="720px" frameborder="1">这是我的空间</iframe>
+    </p>
+
+    <h2><a id="Chapter9">十二-颜色</a></h2>
+    <p>HTML颜色是rgb颜色，由红色、绿色和蓝色3种颜色组成。<br>
+        每种颜色用0到255表示，也常用十六进制数（Hex）表示。</p>
+
+    <h2>十三-脚本</h2>
+    <p></p>
+
+    <h2>十四</h2>
+    <h2>十五</h2>
+    <h2>十六</h2>
+    <h2>十七</h2>
+    <h2>十八</h2>
+    <h2>十九</h2>
+    <h2>二十</h2>
+    <h2>二十一</h2>
+    <h2>二十二</h2>
+    <h2>二十三</h2>
+    <h2>二十四</h2>
+    <h2>二十五</h2>
+    <h2>二十六</h2>
+    <h2>二十七</h2>
+    <h2>二十八</h2>
+</body>
+
+</html>
