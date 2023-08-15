@@ -49,14 +49,11 @@ ___
 VSCode是[^Microsoft]一款软件产品的名称。  
 [^Microsoft]:美国微软公司
 
-```python
-1+1
-```
+## 8、列表
+### 1、无序列表
+使用*、+或-号都行  
 
-$$
-y=15^5-cos90
-$$
-
-$y=logxdgdg*dgadf$
-
-> dfasdfa
+### 2、有序列表
+使用数字加点.号来表示  
+1.dfsdf  
+2.dfadf
