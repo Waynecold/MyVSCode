@@ -11,7 +11,7 @@ zhengzhou bigdata itheima
 """
 
 # 我的写法
-with open("D:/Documents/MyVSCode/Python/MyFirstPython/8-2-0-word.txt", "r", encoding="UTF-8") as f:
+with open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-2-0-word.txt", "r", encoding="UTF-8") as f:
     count = 0
     for line in f.readlines(): # 这里的readlines可以省略
         list = line.split() # 这里的list其实是list类型，list里面的元素是str类型
@@ -23,7 +23,7 @@ with open("D:/Documents/MyVSCode/Python/MyFirstPython/8-2-0-word.txt", "r", enco
 # 示例
 
 # 打开文件
-f = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-2-0-word.txt", "r", encoding="UTF-8")
+f = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-2-0-word.txt", "r", encoding="UTF-8")
 
 # 方法1，读取全部内容，通过字符串count方法统计itheima的单词数量
 content = f.read() # 此处read得到的结果是一整串str类型
@@ -31,7 +31,7 @@ count = content.count("itheima")
 print(f"2、itheima在文件中出现了{count}次。")
 
 # 打开文件
-f = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-2-0-word.txt", "r", encoding="UTF-8")
+f = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-2-0-word.txt", "r", encoding="UTF-8")
 
 # 方法2，读取内容，一行一行读取
 count = 0

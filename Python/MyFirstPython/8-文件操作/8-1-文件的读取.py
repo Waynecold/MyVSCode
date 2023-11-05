@@ -1,5 +1,5 @@
 # 打开文件
-f = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-0-Python的简介.txt", "r", encoding="UTF-8")
+f = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-0-Python的简介.txt", "r", encoding="UTF-8")
 print(f"f的类型是{type(f)}")
 
 # # 读取文件
@@ -30,6 +30,6 @@ print(f"f的类型是{type(f)}")
 f.close()
 
 ## with open() as f语法实现自动close，避免遗忘
-with open("D:/Documents/MyVSCode/Python/MyFirstPython/8-0-Python的简介.txt", "r", encoding="UTF-8") as f:
+with open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-0-Python的简介.txt", "r", encoding="UTF-8") as f:
     for line in f:
         print(f"每一行的数据是：{line}")

@@ -4,9 +4,9 @@
 进行判断，将标记为测试的数据行丢弃
 '''
 # 我的写法
-f1 = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-4-0-bill.txt", "r", encoding="utf-8")
+f1 = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-4-0-bill.txt", "r", encoding="utf-8")
 content = f1.readlines()
-f2 = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-4-0-bill.txt.bak", "w", encoding="utf-8")
+f2 = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-4-0-bill.txt.bak", "w", encoding="utf-8")
 for line in content:
     if "测试" in line:
         continue
@@ -16,9 +16,9 @@ f1.close()
 
 # # 示例
 # # 打开文件得到对象，准备读取
-# fr = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-4-0-bill.txt", "r", encoding="utf-8")
+# fr = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-4-0-bill.txt", "r", encoding="utf-8")
 # # 打开问价得到文件对象，准备写入
-# fw = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-4-0-bill.txt.bak", "w", encoding="utf-8")
+# fw = open("D:/Documents/MyVSCode/Python/MyFirstPython/8-文件操作/8-4-0-bill.txt.bak", "w", encoding="utf-8")
 # # for循环读取文件
 # for line in fr:
 #     line = line.strip()

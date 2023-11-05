@@ -970,3 +970,99 @@ f.flush
 ### 文件的追加
 
 通过`open()`函数的`"a"`模式，其他特性和`"w"`模式相同。
+
+## 9 - Python异常、模块与包
+
+### Python异常
+
+程序错误和异常称为`bug`。对`bug`提前`捕获`以减少`异常`。
+
+> 捕获异常：
+
+```py
+# 捕获常规异常
+try:
+    可能发生错误的代码
+except[异常 as 别名]:
+    如果出现异常执行补救的代码
+[else:]
+    没有异常时执行的代码
+[finally:]
+    有无异常都执行，如关闭文件
+
+# 捕获指定异常
+try:
+    print(name)
+except NameError as e:
+    print("name变量名称未定义错误")
+
+# 捕获多个异常
+try:
+    print(name)
+except(NameError, ZeroDivisionError) as e:
+    print("出现了变量未定义 或者 除以0的异常错误")
+
+# 捕获所有异常 - Exception
+try:
+    print(name)
+except Exception as e:
+    print("出现异常了")
+```
+
+异常具有传递性，在多个嵌套函数内传递
+
+### 模块Module
+
+`模块`也是一个`Python`文件，储存`类`、`函数`、`变量`等。通过导入进行使用。
+
+> 导入模块的语法：
+
+```py
+[from 模块名] import [模块|类|变量|函数|*][as 别名]
+```
+
+- `from`可以省略，`as`别名也可以省略
+- `*`表示导入模块全部功能
+- 通过`.`来确定层级关系
+- 模块导入通常写在代码的开头位置
+
+> 示例：
+
+```py
+# time是Python内置的模块，按住CTRL点击可打开该模块的文件time.pyi
+import time 
+print("你好")
+time.sleep(5)
+print("我好")
+```
+
+#### 自定义模块
+
+模块也是`Python`文件，通过`import`、`from`关键字导入即可。
+
+通过`if __main__ == "__main__`"限制仅有当直接执行程序才进入`if`内部，如果是导入的，则不进入`if`内部。用于模块的内部测试，调用时不会执行。
+
+不同模块，同名的功能都被导入的话，后导入的会覆盖先前导入的。
+
+`__all__ = [函数1, 函数2...]`变量功能：引入一个列表，用于控制`import *`对哪些功能可以被导入。
+
+### Python包
+
+`Python包`就是文件夹，里面存放多个`Python模块`文件，但包含一个`__init__.py`文件。文件内也使用`__all__`变量来控制`import *`的导入范围。
+`包`的导入和`模块`的类似，只是多一层级的写法。
+
+常用的第三方包：
+
+- 科学计算：numpy
+- 数据分析：pandas
+- 大数据计算：pyspark、apache-flink
+- 图形可视化：matplotlib、pyecharts
+- 人工智能：tensorflow
+
+Python内置了`pip程序`用于导入第三方包。
+
+> 示例：（在命令提示符中通过网络安装第三方包）
+
+```cmd
+pip install -i url地址 包名称
+```
