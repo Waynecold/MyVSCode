@@ -1053,16 +1053,84 @@ print("我好")
 
 常用的第三方包：
 
-- 科学计算：numpy
-- 数据分析：pandas
-- 大数据计算：pyspark、apache-flink
-- 图形可视化：matplotlib、pyecharts
-- 人工智能：tensorflow
+- 科学计算：`numpy`
+- 数据分析：`pandas`
+- 大数据计算：`pyspark`、`apache-flink`
+- 图形可视化：`matplotlib`、`pyecharts`
+- 人工智能：`tensorflow`
 
-Python内置了`pip程序`用于导入第三方包。
+`Python`内置了`pip程序`用于导入第三方包。
 
 > 示例：（在命令提示符中通过网络安装第三方包）
 
 ```cmd
 pip install -i url地址 包名称
 ```
+
+## 10 - Python综合案例
+
+### json数据格式
+
+`JSON`是以一种轻量级数据交互格式，本质是一个特定格式的`字符串`。主要功能是在不同编程语言中数据的**传递和交互**。`JSON`的格式正好和`Python`中的`字典`或一个`内部元素全是字典的列表`。
+
+> Python数据和Json数据的互相转化：
+
+- 在Python中，需要先`import json`，再使用`dumps`和`loads`方法，如：`data = json.dumps(data)`
+- 如果字符串内容包含中文，可以使用`ensure_ascii = False`参数来确保中文正确转换
+
+### pyecharts模块
+
+开发可视化图表使用的技术栈是Echart框架的Python版本：pyecharts包<https://pyecharts.org/#/zh-cn/>
+
+> 需要在cmd安装：`pip install pyecharts`
+
+pyecharts常用配置选项:
+
+- 全局配置选项
+  - 配置图标的标题
+  - 配置图例
+  - 配置鼠标移动的效果
+  - 配置工具栏
+  - 等等整体的配置项
+- 系列配置选项
+
+### 数据处理
+
+本章缺少数据。
+
+结合`jsonviewer`来分析`json`的结构层次，主要使用`.replace`和`切片`的方法来处理原始数据。
+
+### 创建折线图
+
+```py
+import json
+from pyecharts.charts import Line # 导包，导入折线图功能
+from pyecharts.options import TitleOpts, LabelOpts # 导入标题设置
+...
+# 生成图表
+## 构建折线图对象
+line = Line()
+...
+# 调用render方法，生成图表
+line.render()
+```
+
+详见：`Python\MyFirstPython\10-Python综合案例\10-3-折线图开发（缺少数据不能运行只作展示）.py`
+
+### 创建可视化地图
+
+```py
+from pyecharts.charts import Map # 导入地图功能
+from pyecharts.options import VisualMaOpts #地图相关设置
+...
+# 创建地图对象
+map = Map()
+
+# 添加数据
+map.add("各省份确诊人数", data_list, "china")
+...
+# 绘图
+map.render("全国疫情地图.html") # 创建并命名目标文件
+```
+
+详见：`Python\MyFirstPython\10-Python综合案例\10-4-地图可视化基本使用.py` 和`Python\MyFirstPython\10-Python综合案例\10-5-全国疫情可视化地图（缺数据）.py`
