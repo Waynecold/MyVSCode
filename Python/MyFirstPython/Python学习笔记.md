@@ -1100,14 +1100,13 @@ pyecharts常用配置选项:
 
 结合`jsonviewer`来分析`json`的结构层次，主要使用`.replace`和`切片`的方法来处理原始数据。
 
-### 创建折线图
+### 构建折线图
 
 ```py
 import json
 from pyecharts.charts import Line # 导包，导入折线图功能
 from pyecharts.options import TitleOpts, LabelOpts # 导入标题设置
 ...
-# 生成图表
 ## 构建折线图对象
 line = Line()
 ...
@@ -1117,7 +1116,7 @@ line.render()
 
 详见：`Python\MyFirstPython\10-Python综合案例\10-3-折线图开发（缺少数据不能运行只作展示）.py`
 
-### 创建可视化地图
+### 构建可视化地图
 
 ```py
 from pyecharts.charts import Map # 导入地图功能
@@ -1134,3 +1133,29 @@ map.render("全国疫情地图.html") # 创建并命名目标文件
 ```
 
 详见：`Python\MyFirstPython\10-Python综合案例\10-4-地图可视化基本使用.py` 和`Python\MyFirstPython\10-Python综合案例\10-5-全国疫情可视化地图（缺数据）.py`
+
+### 构建柱状图
+
+```py
+from pyecharts.charts import Bar
+from pyecharts.options import LabelOpts
+
+# 创建柱状图
+bar = Bar()
+
+# 添加x轴数据
+bar.add_xaxis(["中国","美国","英国"])
+
+# 添加y轴数据
+bar.add_yaxis("GDP",[30,20,10],label_opts=LabelOpts(position="right")) # 设置数值标签在右侧
+
+# 反转x轴和y轴
+bar.reversal_axis()
+
+# 绘图
+bar.render("基础柱状图.html")
+```
+
+### 构建时间线柱状图
+
+详见：`Python\MyFirstPython\10-Python综合案例\10-7-带有时间线的柱状图.py`

@@ -30,4 +30,4 @@ map.set_global_opts(
 )
 
 # 绘图
-map.render()
+map.render("地图可视化基本使用.html")
