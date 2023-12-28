@@ -2,6 +2,7 @@
 单继承演示
 """
 
+
 class Phone:                    # 第一代类的功能
     IMEI = None
     producer = "Huawei"             # 生产商
@@ -51,3 +52,6 @@ phone.call_by_5G()
 print(phone.producer)               # 成员属性重名了，按继承顺序排列优先级
 phone.read_card()
 phone.control()
+
+# 如果对继承的内容不满意，可以复写。把父类的内容在子类中修改覆盖掉。
+
