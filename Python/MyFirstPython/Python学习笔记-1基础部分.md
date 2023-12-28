@@ -1,4 +1,4 @@
-# Python 学习笔记
+# Python 学习笔记1-基础部分
 
 作者：Waynecold
 
